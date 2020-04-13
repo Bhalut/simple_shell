@@ -3,7 +3,7 @@
 .B shell - command interpreter
 
 .SH SYNOPSIS
-.B ./shell
+.B ./hsh
 
 .SS Syntax
 The shell works by using commands given by the user input. The shell commands take in the following syntax:
