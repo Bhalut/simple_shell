@@ -1,10 +1,8 @@
 # 0x16. C - SIMPLE SHELL
 
 <p align="center">
-  <img src="https://mcdn.wallpapersafari.com/medium/5/36/lmD5tM.jpg">
-  </p>
-
-![imagen](https://mcdn.wallpapersafari.com/medium/5/36/lmD5tM.jpg)
+<img src="https://mcdn.wallpapersafari.com/medium/5/36/lmD5tM.jpg">
+</p>
 
 ## Description
 
