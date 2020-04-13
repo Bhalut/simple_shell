@@ -15,6 +15,7 @@ The `simple_shell` is a command that reads lines from either a file or the termi
 ## Syntax
 
 The shell works by using commands given by the user input. The shell commands take in the following syntax:
+
 `#cisfun$ <command> <flags or options> <argument 1> <argument 2> ...`
 
 ## Features
