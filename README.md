@@ -35,7 +35,7 @@ The shell works by using commands given by the user input. The shell commands ta
 - Type a command of your liking and press `"Enter"`
 - Appropriate output will appear
 - Prompt reappears and awaits your next command
-- Exit shell by typing `"exit"`, `"ctrl c"` o `"ctrl D"`
+- Exit shell by typing `"exit"` o `"ctrl D"`
 
 
 ## Environment
@@ -47,7 +47,7 @@ The custom shell was developed and tested on `Ubuntu 14.04` LTS via Vagrant in V
 
 All files will be compiled with the following: 
 ```bash
-cc -Wall -Werror -Wextra -pedantic *.c -o hsh
+gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 ```
 
 ## Exiting commands and the shell
