@@ -25,11 +25,11 @@ The `simple_shell` is a command that reads lines from either a file or the termi
 
 ## Usage
 
-- Enter custom shell by typing `"./hsh"`. You should be prompted with a `($)`
+- Enter custom shell by typing `"./hsh"`. You should be prompted with a `cisfun$`
 - Type a command of your liking and press `"Enter"`
 - Appropriate output will appear
 - Prompt reappears and awaits your next command
-- Exit shell by typing `"exit"`
+- Exit shell by typing `"exit"`, `"ctrl c"` o `"ctrl D"`
 
 
 ## Environment
