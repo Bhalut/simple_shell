@@ -12,6 +12,11 @@
 The `simple_shell` is a command that reads lines from either a file or the terminal, interprets them, and generally executes other commands. The `simple_shell` implements a language that has flow control constructs, a macro facility that provides a variety of features in addition to data storage, along with built in history and lineediting capabilities. It incorporates many features to aid interactive use and has the advantage that the interpretative language is common to both interactive and non-interactive use`(shell scripts)`. That is, commands canbe typed directly to the running shell or can be put into a file and the file can be executed directly by the shell.
 
 
+## Syntax
+
+The shell works by using commands given by the user input. The shell commands take in the following syntax:
+`#cisfun$ <command> <flags or options> <argument 1> <argument 2> ...`
+
 ## Features
 
 - Displays a prompt and waits for user to type a command
@@ -25,7 +30,7 @@ The `simple_shell` is a command that reads lines from either a file or the termi
 
 ## Usage
 
-- Enter custom shell by typing `"./hsh"`. You should be prompted with a `cisfun$`
+- Enter custom shell by typing `"./hsh"`. You should be prompted with a `#cisfun$`
 - Type a command of your liking and press `"Enter"`
 - Appropriate output will appear
 - Prompt reappears and awaits your next command
