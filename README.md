@@ -1,6 +1,6 @@
 # 0x16. C - SIMPLE SHELL
 
-![imagen](https://fsa.zobj.net/crop.php?r=wxnhCKygZkyFeDmb4Xzm3SaeyoOqZyiV1gE-J39wRh6QyZpqmNXNJpTMXVu9M-1ZfkBo0OhVOvh7ukLCVNAA8Co_ILHz9g3phhgtvnALpCt1KNV67Az4BHrrTlDrXy7Lyw9iJL8Wl6FsosGY)
+![imagen](https://mcdn.wallpapersafari.com/medium/5/36/lmD5tM.jpg)
 
 ## Description
 
@@ -46,7 +46,36 @@ cc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
 To exit out of a command or process the user can use `ctrl c`. `Control c` stops a process and causes it to abort. The user can also utilize the command `ctrl D` which will just exit. When the command `ctrl D` is used an exit status of 0 is given. Using `exit`, you can input its exit status or it is defaulted to thestatus of the last command executed.
 
+
+## Example
+
+Interactive Mode
+
+```bash
+$ ./hsh
+($) /bin/ls
+hsh main.c shell.c
+($)
+($) exit
+$
+```
+Non-interactive Mode
+
+```bash
+$ echo "/bin/ls" | ./hsh
+hsh main.c shell.c test_ls_2
+$
+$ cat test_ls_2
+/bin/ls
+/bin/ls
+$
+$ cat test_ls_2 | ./hsh
+hsh main.c shell.c test_ls_2
+hsh main.c shell.c test_ls_2
+$
+```
 ## Authors
 
 Mónica Ortíz Alvarez [GitHub](https://github.com/monicajoa)
+
 Abdel Mejia [GitHub](https://github.com/Bhalut)
