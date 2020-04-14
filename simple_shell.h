@@ -7,7 +7,9 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <sys/stat.h>
 
+extern char **environ;
 
 int _putchar(char c);
 

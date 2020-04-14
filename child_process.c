@@ -1,5 +1,4 @@
 #include "simple_shell.h"
-extern char **environ;
 /**
  * child_process - New process and execute
  * @buffer: string allocade by buffer
