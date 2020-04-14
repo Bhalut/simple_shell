@@ -15,6 +15,7 @@ int main(void)
 	{
 		shell_prompt();
 		getln_val = getline(&buffer, &buff_size, stdin);
+		child_process(buffer);
 	}
 	return (0);
 }

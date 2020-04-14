@@ -1,9 +1,9 @@
 #include "simple_shell.h"
 /**
- *_strdup -  returns a pointer to a newly allocated space in memory
+ *_strdup - returns a pointer to a newly allocated space in memory
  *@str: duplicate of the string
  *
- * Return: Always 0 (Success)
+ * Return: Address of the array
  */
 char *_strdup(char *str)
 {
@@ -26,9 +26,10 @@ char *_strdup(char *str)
 	{
 		return ('\0');
 	}
-	for (a = 0; a <= i; a++)
+	for (a = 0; a < i; a++)
 	{
 		m[a] = str[a];
 	}
+	m[a] = '\0';
 	return (m);
 }
