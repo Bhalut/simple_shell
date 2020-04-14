@@ -1,15 +1,14 @@
-#include "simple_shell.h"
+#include "shell.h"
+
 /**
- *_strdup - returns a pointer to a newly allocated space in memory
- *@str: duplicate of the string
+ * _strdup - returns a pointer to a newly allocated space in memory
+ * @str: duplicate of the string
  *
  * Return: Address of the array
  */
 char *_strdup(char *str)
 {
-
-	int i;
-	int a;
+	int i, a;
 	char *m;
 
 	if (str == '\0')
@@ -31,5 +30,6 @@ char *_strdup(char *str)
 		m[a] = str[a];
 	}
 	m[a] = '\0';
+
 	return (m);
 }
