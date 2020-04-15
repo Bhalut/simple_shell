@@ -1,6 +1,21 @@
 #include "shell.h"
 
 /**
+ * msg - message handler
+ * @sig: signal
+ *
+ * Return void
+ */
+void msg(int sig)
+{
+	if (sig == SIGINT)
+	{
+		_putchar('\n');
+		prompt();
+	}
+}
+
+/**
  * process - New process and execute
  * @buffer: string allocade by buffer
  *
@@ -27,5 +42,6 @@ void process(char *buffer)
 	else
 	{
 		wait(NULL);
+		signal(SIGINT, msg);
 	}
 }
