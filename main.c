@@ -13,11 +13,12 @@ int main(__attribute__((unused))int argc, __attribute__((unused)) char *argv[])
 {
 	char *buffer = NULL;
 	size_t buff_size = 0;
+	ssize_t line = 0;
 
-	while (EOF)
+	while (line != EOF)
 	{
 		prompt();
-		getline(&buffer, &buff_size, stdin);
+		line = getline(&buffer, &buff_size, stdin);
 		process(buffer);
 	}
 
