@@ -3,16 +3,17 @@
 /**
  * token_num - number of words on a string
  * @str: string to split
+ * @sep: strin whit the caracter delimitadores
  *
  * Return: number of words
  */
-unsigned int token_num(char *str)
+unsigned int token_num(char *str, char sep[])
 {
 	char *token;
-	char sep[] = " \n\t";
-	unsigned int i = 0;
+	unsigned int i;
 
 	token = strtok(str, sep);
+	i = 0;
 	while (token)
 	{
 		token = strtok(NULL, sep);
@@ -27,16 +28,17 @@ unsigned int token_num(char *str)
  * @str: String to split
  * @splt_str: pointer with the memory allocated fo the strs
  * @n: number of words to split
+ * @sep: strin whit the caracter delimitadores
  *
  * Return: Address of the sub-strings
  */
-char **split_token(char **splt_str, char *str, unsigned int n)
+char **split_token(char **splt_str, char *str, unsigned int n, char sep[])
 {
 	char *token;
-	char sep[] = " \n\t";
-	unsigned int j = 0;
+	unsigned int j;
 
 	token = strtok(str, sep);
+	j = 0;
 	while (j < n)
 	{
 		splt_str[j] = _strdup(token);
@@ -50,7 +52,7 @@ char **split_token(char **splt_str, char *str, unsigned int n)
 			free(splt_str[0]);
 			free(splt_str);
 			free(str);
-			msgerr("Failed to allocate memmory to array", 1);
+			msgerr("Failed to allocate memory to array", 1);
 		}
 		token = strtok(NULL, sep);
 		j++;
@@ -63,27 +65,28 @@ char **split_token(char **splt_str, char *str, unsigned int n)
 /**
  * str_to_arrays - Split the strings to sub-strings
  * @buffer_size: String to Split
+ * @sep: strin whit the caracter delimiters
  *
  * Return: (Double pointer)Address to sub-strings
  */
-char **str_to_arrays(char *buffer_size)
+char **str_to_arrays(char *buffer_size, char sep[])
 {
 	char *aux_len, *aux_split;
 	char **split_str;
 	unsigned int i;
 
-	aux_len = strdup(buffer_size);
+	aux_len = _strdup(buffer_size);
 	if (aux_len == '\0')
 	{
 		msgerr("Failed to allocate memory", 1);
 	}
-	aux_split = strdup(buffer_size);
+	aux_split = _strdup(buffer_size);
 	if (aux_split == '\0')
 	{
 		free(aux_len);
 		msgerr("Failed to allocate memory", 1);
 	}
-	i = token_num(aux_len);
+	i = token_num(aux_len, sep);
 	aux_len = '\0';
 	free(aux_len);
 	split_str = malloc((i * sizeof(char *)) + 1);
@@ -92,7 +95,7 @@ char **str_to_arrays(char *buffer_size)
 		free(aux_split);
 		msgerr("Failed to allocate memmory", 1);
 	}
-	split_str = split_token(split_str, aux_split, i);
+	split_str = split_token(split_str, aux_split, i, sep);
 	aux_split = '\0';
 	free(aux_split);
 	return (split_str);

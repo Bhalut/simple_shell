@@ -17,24 +17,22 @@ void msg(int sig)
 
 /**
  * process - New process and execute
- * @buffer: string allocade by buffer
+ * @args: Array of pointers with arguments taken by getline
  *
  * Return: void
  */
-void process(char *buffer)
+void process(char **args)
 {
 	pid_t child_id;
-	char **prts;
 
-	prts = str_to_arrays(buffer);
 	child_id = fork();
-	if (child_id == -1)
+	if (child_id < 0)
 	{
 		msgerr("Failed to create new process", 1);
 	}
 	else if (child_id == 0)
 	{
-		if (execve(prts[0], prts, environ) == -1)
+		if (execve(args[0], args, environ) == -1)
 		{
 			msgerr("Failed to execute the process", 1);
 		}

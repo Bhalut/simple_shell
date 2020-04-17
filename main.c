@@ -9,18 +9,21 @@
  *
  * Authors: Monica Ortiz - Abdel Mejia
  */
-int main(__attribute__((unused))int argc, __attribute__((unused)) char *argv[])
+int main(int argc __attribute__((unused)), char *argv[])
 {
 	char *buffer = NULL;
 	size_t buff_size = 0;
 	ssize_t line = 0;
+	char **args;
+	unsigned int number_cmd = 1;
 
 	while (line != EOF)
 	{
 		prompt();
-		line = getline(&buffer, &buff_size, stdin);
-		process(buffer);
+		line = geline(&buffer, &buff_size, stdin);
+		args = str_to_arrays(buffer, " \n\t");
+		process(args);
+		number_cmd++;
 	}
-
 	return (EXIT_SUCCESS);
 }
