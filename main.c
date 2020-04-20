@@ -17,13 +17,36 @@ int main(int argc __attribute__((unused)), char *argv[])
 	char **args;
 	unsigned int number_cmd = 1;
 
-	while (line != EOF)
+	if (!isatty(0))
 	{
+<<<<<<< HEAD
 		prompt();
 		line = geline(&buffer, &buff_size, stdin);
 		args = str_to_arrays(buffer, " \n\t");
 		process(args);
 		number_cmd++;
 	}
+=======
+		line = getline(&buffer, &buff_size, stdin);
+		process(buffer);
+	}
+	else
+	{
+		do {
+			prompt();
+			line = getline(&buffer, &buff_size, stdin);
+
+			if (line == EOF)
+			{
+				free(buffer);
+				_putchar('\n');
+				return (EXIT_SUCCESS);
+			}
+
+			process(buffer);
+		} while (line != EOF);
+	}
+
+>>>>>>> 62d8ab1cb5b2ce2455a04aa5f24a26508be9ff36
 	return (EXIT_SUCCESS);
 }

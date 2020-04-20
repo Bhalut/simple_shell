@@ -24,7 +24,7 @@ char *_getenv(const char *str)
 		token = strtok(aux, del);
 		if (_strcmp(str, token) == 0)
 		{
-			token = strtok('\0', del);
+			token = strtok(NULL, del);
 			val = _strdup(token);
 			if (val == '\0')
 			{

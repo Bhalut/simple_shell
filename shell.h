@@ -7,8 +7,9 @@
 #include <unistd.h>
 #include <string.h>
 #include <signal.h>
-#include <sys/types.h>
 #include <sys/wait.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 
 /* Variables  */
 extern char **environ;
@@ -25,8 +26,10 @@ int _strcmp(const char *str1, const char *str2);
 /* Shell */
 void prompt(void);
 void process(char **args);
-char *status(char **args);
-char *_getenv(const char *str)
+char *_getenv(const char *str);
+char **_environ(void);
+char *ascii(char *buffer);
+char *sep_check(char *buffer);
 char **str_to_arrays(char *buffer_str, char sep[]);
 
 /* Util */

@@ -11,6 +11,20 @@
 
 The `simple_shell` is a command that reads lines from either a file or the terminal, interprets them, and generally executes other commands. The `simple_shell` implements a language that has flow control constructs, a macro facility that provides a variety of features in addition to data storage, along with built in history and lineediting capabilities. It incorporates many features to aid interactive use and has the advantage that the interpretative language is common to both interactive and non-interactive use`(shell scripts)`. That is, commands canbe typed directly to the running shell or can be put into a file and the file can be executed directly by the shell.
 
+## Getting Started
+Here are the steps to execute the Shell
+1. Git clone all this respository to your local directory.
+```Bash
+~ $ git clone https://github.com/Bhalut/simple_shell.git.
+```
+2. Compile the program using gcc with the following flags`.
+```Bash
+~ $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+```
+3. Execute the shell.
+```Bash
+~ $ ./hsh
+```
 
 ## Syntax
 
@@ -53,6 +67,23 @@ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 ## Exiting commands and the shell
 
 To exit out of a command or process the user can use `ctrl c`. `Control c` stops a process and causes it to abort. The user can also utilize the command `ctrl D` which will just exit. When the command `ctrl D` is used an exit status of 0 is given. Using `exit`, you can input its exit status or it is defaulted to thestatus of the last command executed.
+
+
+File Name | Description
+--------- | -----------
+AUTHORS | Text file containing the contributing authors
+_environ.c | Copy all the environment VARS
+shell.h | Header file with all the prototypes
+process.c | Create a new process and execute
+\_get_env.c | Get an environment variable
+hsh | Shell executable file
+ascci_check.c | Check if the characters typed are printable ASCII              main.c | Main function to process the shell interpreter
+man_1_simple_shell | Man page of the simple Shell
+README.md | Readme general information
+del_check.c | Check if the string just have sep chars
+str_to_arrays.c | Split a string in sub strings
+shell_strings.c | String handlers
+prompt.c | Print shell prompt
 
 
 ## Example
